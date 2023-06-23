@@ -71,5 +71,7 @@ class Test{
 
 The example above is a good example of method recursion. Method recursion is when a method calls itself again and again.
 
+In method recursion, it had base case scenario( factorial )  - going downards or upwards from a specific number.
 
+Also it has infinite case scenario where method calls itself again and again and after sometime when the stack memory is full it will throw an error such as "StackOverflowError".
 
