@@ -27,7 +27,49 @@ Before the main method gets executed, JVM will create an empty stack memory for 
 
 3 - After completion of the main method, the JVM will destory the empty Stack memory.
 
+4 - When JVM calls the main method, the method names and local variables are stored in the Stack memory.
+
 
 Object related data will be stored in Heap memory. Som instane variables will be stored into the Heap memory.
 
 Static data will be stored in the method area.
+
+
+Keep on method calls will be stored in Stack memory.
+
+You will get an error like "StackOverflowError".
+
+Example:
+
+class Test{
+
+  void m2(){
+  
+    System.out.println("m2 method");
+    
+    m1();
+    
+  }
+
+  void m1(){
+  
+    System.out.println("m1 method");
+    
+    m2();
+    
+  }
+  
+  public static void main(String[] args){
+  
+    Test t = new Test();
+    
+    t.m1();
+    
+  }
+  
+}
+
+The example above is a good example of method recursion. Method recursion is when a method calls itself again and again.
+
+
+
